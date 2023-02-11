@@ -13,7 +13,6 @@ public class LevelGrid : MonoBehaviour
 
     public event UnityAction OnAnyUnitMovedGridPosition;
 
-    [SerializeField] private Transform gridDebugPrefab;
     private GridSystem<GridObject> gridSystem;
 
 
@@ -22,7 +21,6 @@ public class LevelGrid : MonoBehaviour
     {
         Instance = this;
         gridSystem = new GridSystem<GridObject>(width, height, cellSize, (GridSystem<GridObject> g, GridPosition gridPostition) => new GridObject(g, gridPostition));
-        //gridSystem.CreateDebugObjects(gridDebugPrefab);
     }
 
     private void Start()
