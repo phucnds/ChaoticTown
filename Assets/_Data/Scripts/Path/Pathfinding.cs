@@ -32,7 +32,7 @@ public class Pathfinding : MonoBehaviour
         this.cellSize = cellSize;
 
         gridSystem = new GridSystem<PathNode>(width, height, cellSize, (GridSystem<PathNode> g, GridPosition gridPosition) => new PathNode(gridPosition));
-       // gridSystem.CreateDebugObjects(gridDebugPrefab, transform);
+        //gridSystem.CreateDebugObjects(gridDebugPrefab, transform);
 
         for (int x = 0; x < width; x++)
         {
@@ -177,6 +177,7 @@ public class Pathfinding : MonoBehaviour
 
     private PathNode GetNode(int x, int z)
     {
+     
         return gridSystem.GetGridObject(new GridPosition(x, z));
 
     }
@@ -189,10 +190,10 @@ public class Pathfinding : MonoBehaviour
 
         bool LEFT, RIGHT, UP, DOWN;
 
-        LEFT = GridPosition.x - 1 >= 0;
+        LEFT = GridPosition.x - 1 > 0;
         RIGHT = GridPosition.x + 1 < gridSystem.GetWidth();
-        UP = GridPosition.z + 1 <= gridSystem.GetHeight();
-        DOWN = GridPosition.z - 1 >= 0;
+        UP = GridPosition.z + 1 < gridSystem.GetHeight();
+        DOWN = GridPosition.z - 1 > 0;
 
         if (LEFT) neighbourList.Add(GetNode(GridPosition.x - 1, GridPosition.z + 0));
         if (RIGHT) neighbourList.Add(GetNode(GridPosition.x + 1, GridPosition.z + 0));
