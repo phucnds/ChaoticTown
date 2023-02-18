@@ -2,26 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Action", menuName = "ChaoticTown/Actions/TakeAWalk", order = 10)]
+[CreateAssetMenu(fileName = "ActionTakeAWalk", menuName = "ChaoticTown/Actions/TakeAWalk", order = 10)]
 public class ActionTakeAWalk : ActionBasic
 {
-    public override void StartAction()
+    public override void StartAction(Character character, Interactable target)
     {
-        base.StartAction();
+        base.StartAction(character, target);
     }
 
-    public override void UpdateAction()
+    public override void UpdateAction(Character character, Interactable target)
     {
-        base.UpdateAction();
+        base.UpdateAction(character, target);
+        character.AddActionProgress(1 * Time.deltaTime);
+        Debug.Log(character.GetActionProgress());
+        if(character.GetActionProgress() > 1f)
+        {
+            character.Stop();
+        }
+
+        
     }
 
-    public override void StopAction()
+    public override void StopAction(Character character, Interactable target)
     {
-        base.StopAction();
+        base.StopAction(character, target);
     }
 
-    public override bool CanDoAction()
+    public override bool CanDoAction(Character character, Interactable target)
     {
-        return base.CanDoAction();
+        return base.CanDoAction(character, target);
     }
 }

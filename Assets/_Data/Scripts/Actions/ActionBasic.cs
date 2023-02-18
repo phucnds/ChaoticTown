@@ -8,28 +8,32 @@ public class ActionBasic : ScriptableObject
 
     private static List<ActionBasic> list = new List<ActionBasic>();
 
-    public virtual void StartAction()
+    public virtual void StartAction(Character character, Interactable target)
     {
         //Inherit this function to run code when the character start the action
+        Debug.Log($"{character} start action {target}");
     }
 
-    public virtual void StopAction()
+    public virtual void StopAction(Character character, Interactable target)
     {
         //Inherit this function to run code when the character stop the action
+        Debug.Log($"{character} stop action {target}");
     }
 
-    public virtual void UpdateAction()
+    public virtual void UpdateAction(Character character, Interactable target)
     {
         //Inherit this function to run code every frame while doing this action
+        Debug.Log($"{character} update action {target}");
     }
 
-    public virtual void TriggerAction()
+    public virtual void TriggerAction(Character character, Interactable target)
     {
         //Custom action trigger
     }
 
-    public virtual bool CanDoAction()
+    public virtual bool CanDoAction(Character character, Interactable target)
     {
+        Debug.Log($"{character} Can do action {target}");
         return true; 
     }
 
