@@ -1,55 +1,44 @@
-# Node.js Express Upload/Download file Rest API
+# Hello Node!
 
-For more detail, please visit:
-> [Node.js Express File Upload Rest API example](https://www.bezkoder.com/node-js-express-file-upload/)
+This project includes a Node.js server script and a web page that connects to it. The front-end page presents a form the visitor can use to submit a color name, sending the submitted value to the back-end API running on the server. The server returns info to the page that allows it to update the display with the chosen color. 🎨
 
-> [Node.js Express Download File Rest API example](https://www.bezkoder.com/node-js-express-download-file/)
+[Node.js](https://nodejs.org/en/about/) is a popular runtime that lets you run server-side JavaScript. This project uses the [Fastify](https://www.fastify.io/) framework and explores basic templating with [Handlebars](https://handlebarsjs.com/).
 
-> [Node.js Express Delete File Rest API example](https://www.bezkoder.com/node-js-delete-file/)
+_Last updated: 11 Jan 2023_
 
-> [Node.js Express File Upload with Google Cloud Storage example](https://www.bezkoder.com/google-cloud-storage-nodejs-upload-file/)
+## Prerequisites
 
-> [Node Express File Upload to MongoDB example](https://www.bezkoder.com/node-js-upload-store-images-mongodb/)
+You'll get best use out of this project if you're familiar with basic JavaScript. If you've written JavaScript for client-side web pages this is a little different because it uses server-side JS, but the syntax is the same!
 
-Front-end Apps to work with this Node.js Server:
-- [Angular 8 Client](https://www.bezkoder.com/angular-multiple-files-upload/) / [Angular 10 Client](https://www.bezkoder.com/angular-10-file-upload/) / [Angular 11 Client](https://www.bezkoder.com/angular-11-file-upload/) / [Angular 12 Client](https://www.bezkoder.com/angular-12-file-upload/) / [Angular 13 Client](https://www.bezkoder.com/angular-13-file-upload/) / [Angular 14 Client](https://www.bezkoder.com/angular-14-file-upload/) / [Angular 15 Client](https://www.bezkoder.com/angular-15-file-upload/)
+## What's in this project?
 
-- [Angular Material 12](https://www.bezkoder.com/angular-material-12-file-upload/) / [Angular Material 14](https://www.bezkoder.com/angular-material-14-file-upload/) / [Angular Material 15](https://www.bezkoder.com/angular-material-15-file-upload/)
+← `README.md`: That’s this file, where you can tell people what your cool website does and how you built it.
 
-- [Vue Client](https://www.bezkoder.com/vue-axios-file-upload/) / [Vuetify Client](https://www.bezkoder.com/vuetify-file-upload/)
+← `public/style.css`: The styling rules for the pages in your site.
 
-- [React Client](https://www.bezkoder.com/react-file-upload-axios/) / [React Hooks Client](https://www.bezkoder.com/react-hooks-file-upload/)
+← `server.js`: The **Node.js** server script for your new site. The JavaScript defines the endpoints in the site back-end, one to return the homepage and one to update with the submitted color. Each one sends data to a Handlebars template which builds these parameter values into the web page the visitor sees.
 
-- [Material UI Client](https://www.bezkoder.com/material-ui-file-upload/)
+← `package.json`: The NPM packages for your project's dependencies.
 
-More Practice:
-> [Node.js: Upload/Import Excel file data into Database](https://www.bezkoder.com/node-js-upload-excel-file-database/)
+← `src/`: This folder holds the site template along with some basic data files.
 
-> [Node.js: Upload/Import CSV file data into Database](https://www.bezkoder.com/node-js-upload-csv-file-database/)
+← `src/pages/index.hbs`: This is the main page template for your site. The template receives parameters from the server script, which it includes in the page HTML. The page sends the user submitted color value in the body of a request, or as a query parameter to choose a random color.
 
-> [Node.js Rest APIs example with Express & MySQL](https://www.bezkoder.com/node-js-express-sequelize-mysql/)
+← `src/colors.json`: A collection of CSS color names. We use this in the server script to pick a random color, and to match searches against color names.
 
-> [Node.js Rest APIs example with Express & PostgreSQL](https://www.bezkoder.com/node-express-sequelize-postgresql/)
+← `src/seo.json`: When you're ready to share your new site or add a custom domain, change SEO/meta settings in here.
 
-> [Node.js Rest APIs example with Express & MongoDB](https://www.bezkoder.com/node-express-mongodb-crud-rest-api/)
+## Try this next 🏗️
 
-> [Node.js JWT Authentication & Authorization example](https://www.bezkoder.com/node-js-jwt-authentication-mysql/)
+Take a look in `TODO.md` for next steps you can try out in your new site!
 
-> [Deploying/Hosting Node.js app on Heroku with MySQL database](https://www.bezkoder.com/deploy-node-js-app-heroku-cleardb-mysql/)
+___Want a minimal version of this project to build your own Node.js app? Check out [Blank Node](https://glitch.com/edit/#!/remix/glitch-blank-node)!___
 
-Integration (run back-end & front-end on same server/port)
-> [Integrate React with Node.js Restful Services](https://www.bezkoder.com/integrate-react-express-same-server-port/)
+![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
 
-> [Integrate Angular with Node.js Restful Services](https://www.bezkoder.com/integrate-angular-12-node-js/)
+## You built this with Glitch!
 
-> [Integrate Vue with Node.js Restful Services](https://www.bezkoder.com/serve-vue-app-express/)
+[Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
 
-## Project setup
-```
-npm install
-```
-
-### Run
-```
-node server.js
-```
+- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
+- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.

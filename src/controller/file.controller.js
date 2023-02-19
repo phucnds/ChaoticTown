@@ -2,6 +2,21 @@ const uploadFile = require("../middleware/upload");
 const fs = require("fs");
 const baseUrl = "http://localhost:8080/files/";
 
+const ping = async (req, res) => {
+  try {
+
+    res.status(200).send({
+      message: "Server on ready !"
+    });
+  } catch (err) {
+    console.log(err);
+
+    res.status(500).send({
+      message: `Could not upload the file: ${req.file.originalname}. ${err}`,
+    });
+  }
+};
+
 const upload = async (req, res) => {
   try {
     await uploadFile(req, res);
@@ -43,7 +58,7 @@ const getListFiles = (req, res) => {
     files.forEach((file) => {
       fileInfos.push({
         name: file,
-        url: baseUrl + file,
+        // url: baseUrl + file,
       });
     });
 
@@ -99,6 +114,7 @@ const removeSync = (req, res) => {
 };
 
 module.exports = {
+  ping,
   upload,
   getListFiles,
   download,
