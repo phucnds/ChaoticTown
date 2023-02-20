@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8bba923a3406742808820bae2ba374, type: 3}
-  m_Name: NewLocation
+  m_Script: {fileID: 11500000, guid: 4acbb60df1211448391a5e1f9336f76e, type: 3}
+  m_Name: New Load Event Channel SO
   m_EditorClassIdentifier: 
-  sceneName: SceneTest1
-  shortDescription: 
-  music: {fileID: 0}
-  locationName: 
-  enemiesCount: 0

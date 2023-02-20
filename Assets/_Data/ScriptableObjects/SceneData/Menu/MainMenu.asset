@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8bba923a3406742808820bae2ba374, type: 3}
-  m_Name: NewLocation 1
+  m_Script: {fileID: 11500000, guid: e5aff777b050340749b734610ddbc158, type: 3}
+  m_Name: MainMenu
   m_EditorClassIdentifier: 
-  sceneName: SceneTest2
+  sceneName: MainMenu
   shortDescription: 
   music: {fileID: 0}
-  locationName: 
-  enemiesCount: 0
+  menuType: 0
