@@ -12,13 +12,13 @@ public class ActionTakeAWalk : ActionBasic
 
     public override void UpdateAction(Character character, Interactable target)
     {
-        base.UpdateAction(character, target);
-        character.AddActionProgress(1 * Time.deltaTime);
-        Debug.Log(character.GetActionProgress());
-        if(character.GetActionProgress() > 1f)
-        {
-            character.Stop();
-        }
+        // base.UpdateAction(character, target);
+        // character.AddActionProgress(1 * Time.deltaTime);
+        // Debug.Log(character.GetActionProgress());
+        // if(character.GetActionProgress() > 1f)
+        // {
+        //     character.Stop();
+        // }
 
         
     }
