@@ -8,7 +8,7 @@ public class Pathfinding : MonoBehaviour
     public static Pathfinding Instance { get; private set; }
 
     private const int MOVE_STRAIGHT_COST = 10;
-    private const int MOVE_DIAGONAL_COST = 140;
+    private const int MOVE_DIAGONAL_COST = 1000;
 
     [SerializeField] private Transform gridDebugPrefab;
     [SerializeField] private LayerMask obstaclesLayerMark;
@@ -70,7 +70,7 @@ public class Pathfinding : MonoBehaviour
                 GridPosition GridPosition = new GridPosition(x, z);
                 PathNode pathNode = gridSystem.GetGridObject(GridPosition);
 
-                pathNode.SetGCost(int.MaxValue);
+                pathNode.SetGCost(10000);
                 pathNode.SetHCost(0);
                 pathNode.CalculateFCost();
                 pathNode.ResetCameFromPathNode();

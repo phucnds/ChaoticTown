@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : GAgent
+public class Client : GAgent
 {
     public override void Start()
     {
@@ -12,6 +12,6 @@ public class Character : GAgent
 
         SubGoal s2 = new SubGoal("Eat", 1, true);
         goals.Add(s2, 10);
-       
+
     }
 }

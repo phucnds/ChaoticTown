@@ -63,7 +63,7 @@ public class MoveAction : BaseAction
 
                 if (!LevelGrid.Instance.IsValidGridPosition(testGridPosition)) continue;
                 if (unitGridPosition == testGridPosition) continue;
-                if (LevelGrid.Instance.HasAnyUnitOnGridPosition(testGridPosition)) continue;
+                //if (LevelGrid.Instance.HasAnyUnitOnGridPosition(testGridPosition)) continue;
                 if (!Pathfinding.Instance.IsWalkableGridPosition(testGridPosition)) continue;
                 if (!Pathfinding.Instance.HasPath(unitGridPosition, testGridPosition)) continue;
 

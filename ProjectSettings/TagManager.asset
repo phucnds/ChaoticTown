@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EndPoint
+  - StartPoint
+  - Door
+  - Table
+  - DoorKitchen
   layers:
   - Default
   - TransparentFX

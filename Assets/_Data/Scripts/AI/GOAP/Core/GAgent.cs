@@ -31,7 +31,7 @@ public class GAgent : MonoBehaviour
     Vector3 destination = Vector3.zero;
 
     // Start is called before the first frame update
-    public void Start()
+    public virtual void Start()
     {
         GAction[] acts = this.GetComponents<GAction>();
         foreach (GAction a in acts)
@@ -42,29 +42,34 @@ public class GAgent : MonoBehaviour
     bool invoked = false;
     void CompleteAction()
     {
+        Debug.Log("Completed");
         currentAction.running = false;
         currentAction.PostPerform();
         invoked = false;
+        
     }
 
-    void LateUpdate()
+    void Update()
     {
 
         if (currentAction != null && currentAction.running)
         {
             float distanceToTarget = Vector3.Distance(destination, this.transform.position);
-            if (distanceToTarget < 2f)
+          
+            if (distanceToTarget < 0.1f)
             {
+                Debug.Log(gameObject + " - " + distanceToTarget );
 
                 if (!invoked)
                 {
-                    Invoke("CompleteAction", currentAction.duration);
+                    Invoke(nameof(CompleteAction), currentAction.duration);
                     invoked = true;
                 }
             }
             return;
         }
 
+       
         if (planner == null || actionQueue == null)
         {
             planner = new GPlanner();
@@ -109,15 +114,32 @@ public class GAgent : MonoBehaviour
                     else
                         destination = currentAction.target.transform.position;
 
-                    currentAction.agent.SetDestination(destination);
+                    MoveToTarget(destination);
                 }
             }
             else
             {
                 actionQueue = null;
             }
-
         }
+
+    }
+
+    private void MoveToTarget(Vector3 destination)
+    {
+        GridPosition destinationGridPosition = LevelGrid.Instance.GetGridPosition(destination);
+        BaseAction actionMove = GetComponent<MoveAction>();
+
+        if (!actionMove.IsValidActionGridPosition(destinationGridPosition))
+        {
+            Debug.Log("Can't move to destination");
+            return;
+        } 
+        actionMove.TakeAction(destinationGridPosition, ClearBusy);
+    }
+
+    private void ClearBusy()
+    {
 
     }
 }
